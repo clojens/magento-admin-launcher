@@ -11,8 +11,8 @@ case "$1" in
     (composer)
         # publish a composer.cson ~> json
         csonc composer.cson
-        composer validate && print -nP \\r'%F{green}✓ %f' || return 1
-        composer update
+        composer validate |& print -nP \\r'%F{green}✓ %f composer is valid' || return 1
+        #composer update
         ;;
 
         *)
