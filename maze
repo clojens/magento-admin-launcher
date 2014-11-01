@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+case "$1" in
+
+    (modman)
+        # creates a modman file with directories (risky) nor documentation
+        : ${(A)=module:=$(ls -1rtdp htdocs/**/*([^txt|^pdf])(^/))} &&\
+        print -l ${(@)module[@]} | sed -rn 's|htdocs/(.*)$|htdocs/\1 \1|p' > modman
+        ;;
+
+    (composer)
+        # publish a composer.cson ~> json
+        csonc composer.cson
+        composer validate && print -nP \\r'%F{green}✓ %f' || return 1
+        composer update
+        ;;
+
+        *)
+        print 'Commands: ./maze modman and ./maze composer available'
+        ;;
+
+
+esac

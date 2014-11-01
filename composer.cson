@@ -1,0 +1,16 @@
+{
+    name: "jreinke/magento-admin-launcher"
+    type: "magento-module"
+    description: "An intuitive and powerful launcher for Magento admin panel"
+    license: "MIT"
+    authors: [
+        name: "Johann Reinke"
+        email: "info@bubbleshop.net"
+    ]
+    "minimum-stability": "dev"
+    require: {}
+    extra: {
+
+    }
+
+}
